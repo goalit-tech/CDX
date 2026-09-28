@@ -5,12 +5,12 @@ using {
     managed
 } from '@sap/cds/common';
 using {siemens.cdx.common.Address} from '../common';
-using {siemens.cdx.org.Organization} from './oganizationModel';
+using {siemens.cdx.org.Organization} from './organizationModel';
 using {siemens.cdx.org.CampusCategory} from './codeListModel';
 using {siemens.cdx.common.Status} from '../common';
 
 @assert.unique.campusCode: [
-    org,
+    organization,
     campusCode
 ]
 entity Campus : cuid, managed {
