@@ -50,7 +50,7 @@ entity Sections : cuid, managed {
 entity CalendarEvents : cuid, managed {
     academicYear : Association to AcademicYears; // mandatory
     eventName    : String(200);                  // mandatory
-    eventType    : String(50);                   // mandatory (Holiday, Exam, Meeting, Orientation)
+    eventType    : String(50) enum { Holiday; Exam; Meeting; Orientation; }; // mandatory
     startDate    : Date;                         // mandatory
     endDate      : Date;                         // mandatory
 

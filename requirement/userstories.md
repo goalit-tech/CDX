@@ -6,7 +6,7 @@
 
 ---
 
-## Phase 1: Core Organization & Branch Infrastructure
+## Phase 1: Core Organization & Branch Infrastructure 
 
 ### Story 1.1: Organization Setup
 

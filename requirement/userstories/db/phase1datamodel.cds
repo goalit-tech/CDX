@@ -17,17 +17,18 @@ entity Addresses : cuid, managed {
     contactEmail  : String(150);   // optional
     geoCoordinates: String(100);   // optional (lat/long)
     isPrimary     : Boolean default true;
-    addressType   : String(50);    // optional (HQ, Branch, Residential, Billing)
+    addressType   : String(50) enum { HQ; Branch; Residential; Billing; }; // optional
 }
 
 //////////////////////////////////////////////////////
 // Organization Entity
 //////////////////////////////////////////////////////
+@assert.unique.orgCode: [orgCode]
 entity Organizations : cuid, managed {
     orgName         : String(200); // mandatory
-    orgCode         : String(50);  // mandatory
+    orgCode         : String(50);  // mandatory, unique
 
-    orgCategory     : String(50);  // Enum: Kindergarten, School, College, University, Coaching, Training
+    orgCategory     : String(50) enum { Kindergarten; School; College; University; Coaching; Training; }; // mandatory
     scopeOfEducation: String(100); // optional
     affiliationBody : String(100); // optional
 
@@ -36,8 +37,8 @@ entity Organizations : cuid, managed {
     registrationDate: Date;        // optional
 
     establishedYear : Integer;     // optional
-    orgType         : String(50);  // optional (Trust, Society, Private, Govt, University)
-    operationalStatus: String(20); // optional (Active, Inactive, Suspended)
+    orgType         : String(50) enum { Trust; Society; Private; Govt; University; }; // optional
+    operationalStatus: String(20) enum { Active; Inactive; Suspended; }; // optional
     logoURL         : String(200); // optional
 
     addresses : Composition of many Addresses;
@@ -46,19 +47,19 @@ entity Organizations : cuid, managed {
 //////////////////////////////////////////////////////
 // School Entity
 //////////////////////////////////////////////////////
+@assert.unique.branchCode: [org, branchCode]
 entity Schools : cuid, managed {
     org            : Association to Organizations; // mandatory
     schoolName     : String(200); // mandatory
-    branchCode     : String(50);  // mandatory
+    branchCode     : String(50);  // mandatory, unique per org
 
-    schoolCategory : String(50);  // Enum: Kindergarten, Primary, Secondary, College, Coaching
+    schoolCategory : String(50) enum { Kindergarten; Primary; Secondary; College; Coaching; University; }; // mandatory
     mediumOfInstruction : String(50); // optional
     studentCapacity: Integer;     // optional
 
     accreditationID : String(100); // optional
-    schoolType      : String(50);  // optional (Primary, Secondary, College, University)
     establishedYear : Integer;     // optional
-    operationalStatus: String(20); // optional (Active, Inactive, Suspended)
+    operationalStatus: String(20) enum { Active; Inactive; Suspended; }; // optional
     logoURL         : String(200); // optional
 
     principalName : String(150);   // optional

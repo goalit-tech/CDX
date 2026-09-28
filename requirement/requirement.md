@@ -120,13 +120,13 @@ The system will be built incrementally, starting with **core administrative foun
 
 ## 4. Incremental Development Roadmap
 
-1. **Phase 1:** Core setup (Organization, School, Academic Year, Grades).
-2. **Phase 2:** User & Stakeholder Management (Students, Teachers, Staff).
-3. **Phase 3:** Curriculum & Timetable.
-4. **Phase 4:** Attendance & Reporting.
-5. **Phase 5:** Assessment & Grading.
-6. **Phase 6:** Fee & Finance Management.
-7. **Phase 7:** Advanced analytics, dashboards, and integrations.
+1. **Phase 1 (OrganizationSetup / ORG):** Core setup (Organization, School, Academic Year, Grades).
+2. **Phase 2 (UserManagement / USR):** User & Stakeholder Management (Students, Teachers, Staff).
+3. **Phase 3 (CurriculumTimetable / CUR):** Curriculum & Timetable.
+4. **Phase 4 (AttendanceTracking / ATT):** Attendance & Reporting.
+5. **Phase 5 (AssessmentGrading / EXM):** Assessment & Grading.
+6. **Phase 6 (FinanceManagement / FIN):** Fee & Finance Management.
+7. **Phase 7 (AdvancedAnalytics / ANL):** Advanced analytics, dashboards, and integrations.
 
 ---
 
