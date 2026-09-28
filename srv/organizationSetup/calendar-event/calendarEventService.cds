@@ -2,9 +2,9 @@ namespace siemens.cdx.org.service;
 
 using siemens.cdx.org as OrganizationSetupModel from '../../../db/organizationSetup';
 
-service AcademicYearService {
+service CalendarEventService {
     // annotate AcademicYear with  @odata.draft.enabled  @Common.SemanticKey: [];
-    // annotate OrganizationSetupModel.AcademicYear with @odata.draft.enabled;
+    annotate OrganizationSetupModel.CalendarEvent with @odata.draft.enabled;
 
-    entity AcademicYear as projection on OrganizationSetupModel.AcademicYear;
+    entity CalendarEvent as projection on OrganizationSetupModel.CalendarEvent;
 }
