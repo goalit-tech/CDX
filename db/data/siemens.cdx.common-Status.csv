@@ -1,0 +1,5 @@
+code,name,descr
+01,Active,Currently active and operational
+02,Inactive,Currently not active
+03,Suspended,Temporarily suspended
+04,Closed,Permanently closed

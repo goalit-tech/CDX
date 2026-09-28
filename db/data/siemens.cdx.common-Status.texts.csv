@@ -1,0 +1,5 @@
+code,locale,name,descr
+01,en,Active,Currently active and operational
+02,en,Inactive,Currently not active
+03,en,Suspended,Temporarily suspended
+04,en,Closed,Permanently closed
