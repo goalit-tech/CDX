@@ -1,0 +1,1 @@
+using siemens.cdx.usr.service.StudentService as service from '../../srv/userManagement/student/studentService';
