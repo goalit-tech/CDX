@@ -18,6 +18,8 @@ entity AcademicYear : cuid, managed {
     isCurrentSession : Boolean; // optional
     description      : String(150); // optional
 
-    grades           : Composition of many Grade;
-    events           : Composition of many CalendarEvent;
+    grades           : Composition of many Grade
+                           on grades.academicYear = $self;
+    events           : Composition of many CalendarEvent
+                           on events.academicYear = $self;
 }

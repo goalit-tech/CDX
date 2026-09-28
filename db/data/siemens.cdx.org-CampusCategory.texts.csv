@@ -1,4 +1,4 @@
 code,locale,name,descr
-MAIN,en,Main Campus,Primary/head campus
-BRNCH,en,Branch Campus,Secondary branch campus
-SATLT,en,Satellite Campus,Small satellite campus
+MC,en,Main Campus,Primary/head campus
+BC,en,Branch Campus,Secondary branch campus
+SC,en,Satellite Campus,Small satellite campus

@@ -11,7 +11,7 @@ using {siemens.cdx.common.Address} from '../common';
 using {siemens.cdx.usr.Enrollment} from './enrollmentModel';
 
 
-entity Students : cuid, managed {
+entity Student : cuid, managed {
     campus                   : Association to Campus; // mandatory
     studentName              : String(150); // mandatory
     dateOfBirth              : Date; // mandatory
@@ -31,7 +31,10 @@ entity Students : cuid, managed {
     emergencyContactPhone    : String(30); // optional
     emergencyContactRelation : String(50); // optional
 
-    addresses                : Composition of many Address; // optional
+    addresses                : Composition of many Address
+                                   on  addresses.entityId   = ID
+                                   and addresses.entityName = 'Student';
 
-    enrollments              : Composition of many Enrollment on enrollments.student = $self;
+    enrollments              : Composition of many Enrollment
+                                   on enrollments.student = $self;
 }

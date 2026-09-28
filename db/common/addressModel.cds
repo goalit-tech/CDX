@@ -5,10 +5,15 @@ using {
     managed
 } from '@sap/cds/common';
 
+using {siemens.cdx.common.AddressType} from './codeListModel';
+using {siemens.cdx.common.EntityName} from './codeListModel';
+
 //////////////////////////////////////////////////////
 // Address Entity
 //////////////////////////////////////////////////////
 entity Address : cuid, managed {
+    entityId       : UUID;
+    entityName     : EntityName; // mandatory
     addressLine1   : String(200); // mandatory
     city           : String(100); // mandatory
     country        : String(100); // mandatory
@@ -20,10 +25,5 @@ entity Address : cuid, managed {
     contactEmail   : String(150); // optional
     geoCoordinates : String(100); // optional (lat/long)
     isPrimary      : Boolean default true;
-    addressType    : String(50) enum {
-        HQ;
-        Branch;
-        Residential;
-        Billing;
-    }; // optional
+    addressType    : Association to AddressType; // optional
 }

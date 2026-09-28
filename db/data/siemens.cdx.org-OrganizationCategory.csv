@@ -1,5 +1,5 @@
 code,name,descr
-SCHL,School,K-12 school
-COLG,College,Undergraduate college
-UNIV,University,Degree-granting university
-INST,Institute,Specialized training institute
+SC,School,K-12 school
+CG,College,Undergraduate college
+UN,University,Degree-granting university
+IN,Institute,Specialized training institute

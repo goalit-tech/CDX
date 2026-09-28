@@ -15,5 +15,6 @@ entity Grade : cuid, managed {
     gradeCode    : String(20); // optional
     description  : String(150); // optional
 
-    sections     : Composition of many Section;
+    sections     : Composition of many Section
+                       on sections.grade = $self;
 }

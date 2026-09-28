@@ -1,0 +1,9 @@
+code,locale,name,descr
+HQ,en,Headquarters,Primary head office address
+BR,en,Branch,Branch office address
+RS,en,Residential,Residential/home address
+BL,en,Billing,Billing or invoicing address
+ML,en,Mailing,Postal/mailing address
+SH,en,Shipping,Shipping or delivery address
+EM,en,Emergency,Emergency contact address
+TM,en,Temporary,Temporary or seasonal address

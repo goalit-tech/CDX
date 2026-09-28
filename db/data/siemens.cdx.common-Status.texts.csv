@@ -3,3 +3,5 @@ code,locale,name,descr
 02,en,Inactive,Currently not active
 03,en,Suspended,Temporarily suspended
 04,en,Closed,Permanently closed
+05,en,Graduated,Successfully completed the program or course of study
+06,en,Deferred,Postponed or delayed for a future date

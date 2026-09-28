@@ -1,6 +1,6 @@
 code,locale,name,descr
-HOLDY,en,Holiday,Non-working holiday
-EXAM,en,Examination,Examination period
-EVENT,en,Event,General school event
-MEET,en,Meeting,Staff or parent meeting
-SPORT,en,Sports Day,Sports/annual day event
+HD,en,Holiday,Non-working holiday
+EX,en,Examination,Examination period
+EV,en,Event,General school event
+MT,en,Meeting,Staff or parent meeting
+SP,en,Sports Day,Sports/annual day event

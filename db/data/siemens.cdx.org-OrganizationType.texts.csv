@@ -1,5 +1,5 @@
 code,locale,name,descr
-GOVT,en,Government,Government-run organization
-PRVT,en,Private,Privately owned organization
-AIDED,en,Aided,Government-aided private organization
-INTL,en,International,Internationally affiliated organization
+GV,en,Government,Government-run organization
+PR,en,Private,Privately owned organization
+AD,en,Aided,Government-aided private organization
+IN,en,International,Internationally affiliated organization

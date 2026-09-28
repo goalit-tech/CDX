@@ -28,5 +28,7 @@ entity Campus : cuid, managed {
     adminEmail          : String(150); // optional
     adminPhone          : String(30); // optional
 
-    addresses           : Composition of many Address;
+    addresses           : Composition of many Address
+                              on  addresses.entityId   = ID
+                              and addresses.entityName = 'Campus';
 }

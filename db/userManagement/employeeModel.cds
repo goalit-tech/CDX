@@ -28,5 +28,7 @@ entity Employee : cuid, managed {
     specialization : String(100); // optional
     hireDate       : Date; // optional
     status         : Association to Status; // optional
-    addresses      : Composition of many Address; // optional
+    addresses      : Composition of many Address
+                           on  addresses.entityId   = ID
+                           and addresses.entityName = 'Employee';
 }

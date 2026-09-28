@@ -1,0 +1,15 @@
+code,locale,name,descr
+TC,en,Teacher,Responsible for classroom teaching and student instruction
+PR,en,Principal,Head of the school/campus administration
+VP,en,Vice Principal,Assists the principal in school administration
+AC,en,Accountant,Manages financial records and accounting
+LB,en,Librarian,Manages the school library and resources
+HR,en,HR,Manages recruitment, payroll and employee relations
+AD,en,Admin,Handles general administrative tasks
+SP,en,Support Staff,Provides general support services
+CN,en,Counselor,Provides student counseling and guidance
+NU,en,Nurse,Provides student healthcare and first aid
+IT,en,IT Staff,Manages IT infrastructure and technical support
+SC,en,Security,Responsible for campus safety and security
+DR,en,Driver,Drives school transport vehicles
+CH,en,Coach,Trains students in sports and extracurricular activities

@@ -5,8 +5,8 @@ using {
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.common.Address} from '../common';
-using {siemens.cdx.org.OrganizationCategory, } from './codeListModel';
+using {siemens.cdx.common.Address, } from '../common';
+using {siemens.cdx.org.OrganizationCategory} from './codeListModel';
 using {siemens.cdx.org.OrganizationType} from './codeListModel';
 using {siemens.cdx.common.Status} from '../common';
 
@@ -28,6 +28,7 @@ entity Organization : cuid, managed {
     orgType          : Association to OrganizationType; // optional
     Status           : Association to Status; // optional
     logoURL          : String(150); // optional
-
-    addresses        : Composition of many Address         @mandatory; // mandatory
+    addresses        : Composition of many Address
+                           on  addresses.entityId   = ID
+                           and addresses.entityName = 'Organization';
 }
