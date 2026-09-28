@@ -11,7 +11,7 @@ entity Section : cuid, managed {
     grade       : Association to Grade; // mandatory
     sectionName : String(50); // mandatory
 
-    sectionCode : String(50); // optional
+    sectionCode : String(20); // optional
     capacity    : Integer; // optional
-    description : String(200); // optional
+    description : String(150); // optional
 }

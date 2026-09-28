@@ -10,10 +10,10 @@ using {siemens.cdx.org.Section} from './sectionModel';
 
 entity Grade : cuid, managed {
     academicYear : Association to AcademicYear; // mandatory
-    gradeName    : String(100); // mandatory
+    gradeName    : String(80); // mandatory
 
-    gradeCode    : String(50); // optional
-    description  : String(200); // optional
+    gradeCode    : String(20); // optional
+    description  : String(150); // optional
 
     sections     : Composition of many Section;
 }

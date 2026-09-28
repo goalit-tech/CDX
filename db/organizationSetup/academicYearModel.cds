@@ -11,12 +11,12 @@ using {siemens.cdx.org.CalendarEvent} from './calendarEventModel';
 
 entity AcademicYear : cuid, managed {
     campus           : Association to Campus; // mandatory, links back to Phase 1
-    yearLabel        : String(50); // mandatory
+    yearLabel        : String(20); // mandatory
     startDate        : Date; // mandatory
     endDate          : Date; // mandatory
 
     isCurrentSession : Boolean; // optional
-    description      : String(200); // optional
+    description      : String(150); // optional
 
     grades           : Composition of many Grade;
     events           : Composition of many CalendarEvent;

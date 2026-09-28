@@ -15,16 +15,16 @@ using {siemens.cdx.common.Status} from '../common';
 ]
 entity Campus : cuid, managed {
     organization        : Association to Organization   @mandatory; // mandatory
-    campusName          : String(200)                   @mandatory; // mandatory
+    campusName          : String(100)                   @mandatory; // mandatory
     campusCode          : String(20)                    @mandatory; // mandatory, unique per org
     campusCategory      : Association to CampusCategory @mandatory; // mandatory
     mediumOfInstruction : String(50); // optional
     studentCapacity     : Integer; // optional
-    accreditationID     : String(100); // optional
+    accreditationID     : String(50); // optional
     establishedYear     : Integer; // optional
     status              : Association to Status;
-    logoURL             : String(200); // optional
-    principalName       : String(150); // optional
+    logoURL             : String(150); // optional
+    principalName       : String(100); // optional
     adminEmail          : String(150); // optional
     adminPhone          : String(30); // optional
 
