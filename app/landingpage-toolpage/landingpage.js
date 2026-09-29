@@ -129,6 +129,7 @@ window.cdx = window.cdx || {};
     function showHome() {
       oTitle.setText(getConfig().appTitle || "Home");
       oNavList.setSelectedKey("");
+      oHashChanger.setHash("");
       destroyCurrentApp();
 
       var oTileContainer = new sap.m.FlexBox({ wrap: sap.m.FlexWrap.Wrap }).addStyleClass("sapUiSmallMargin");
@@ -163,11 +164,14 @@ window.cdx = window.cdx || {};
       destroyCurrentApp();
 
       if (oApp.applicationType === "SAPUI5") {
-        // clear the shared browser hash first: apps with their own router (e.g. Fiori
-        // elements List Report/Object Page) read the CURRENT hash on init and would
-        // otherwise mistake our tile id (e.g. "organizations-manage") for one of their
-        // own route patterns and render nothing (blank page).
-        oHashChanger.setHash("");
+        // set the tile id as the visible hash (e.g. "#organizations-manage") so the address
+        // bar reflects the active tile. Embedded apps with their own router (Fiori elements
+        // List Report/Object Page) won't match this pattern on init, so their manifest routing
+        // config must define a "bypassed" target (fallback to the default/list route) instead
+        // of rendering blank - see app/organization/webapp/manifest.json for an example. Once
+        // the embedded app navigates internally (e.g. list -> object page) it will overwrite
+        // this hash with its own, which is an accepted trade-off (see repo memory).
+      oHashChanger.setHash(sAppId);
         sap.ui.core.Component.create({
           name: getComponentName(oApp.additionalInformation),
           url: oApp.url,
@@ -180,12 +184,14 @@ window.cdx = window.cdx || {};
             width: "100%",
           });
           setMainContent(oComponentContainer);
+        //   oHashChanger.setHash(sAppId);
         });
       } else {
         setMainContent(new sap.m.MessageStrip({
           text: "Unsupported applicationType '" + oApp.applicationType + "' for " + sAppId,
           type: sap.ui.core.MessageType.Warning,
         }));
+        // oHashChanger.setHash(sAppId);
       }
     }
 

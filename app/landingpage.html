@@ -10,23 +10,13 @@
       window["sap-landingpage-config"] = {
         appTitle: "CampusDesk",
         applications: {
-          "Student-manage": {
-            title: "Manage Student",
-            description: "Manage Student",
-            icon: "sap-icon://student",
-            additionalInformation:
-              "SAPUI5.Component=cdx.ui.usr.studentdashboard",
-            applicationType: "SAPUI5",
-            url: "studentdashboard/webapp",
-            navigationMode: "embedded",
-          },
           "organizations-manage": {
             title: "Manage Organizations",
             description: "Manage Organizations",
             icon: "sap-icon://building",
             additionalInformation: "SAPUI5.Component=cdx.ui.org.organization",
             applicationType: "SAPUI5",
-            url: "organization/webapp",
+            url: "/cdx.ui.org.organization",
             navigationMode: "embedded",
           },
         },
@@ -46,6 +36,7 @@
       data-sap-ui-frame-options="allow"
       data-sap-ui-view-cache="false"
       data-sap-ui-async="true"
+      data-sap-ui-xx-placeholder="false"
     ></script>
 
     <script>

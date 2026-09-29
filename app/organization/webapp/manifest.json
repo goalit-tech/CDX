@@ -95,7 +95,11 @@
       "css": []
     },
     "routing": {
-      "config": {},
+      "config": {
+        "bypassed": {
+          "target": "OrganizationList"
+        }
+      },
       "routes": [
         {
           "pattern": ":?query:",
