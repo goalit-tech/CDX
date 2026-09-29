@@ -11,7 +11,8 @@
   "scripts": {
     "start": "cds-serve",
     "watch-studentdashboard": "cds watch --open cdx.ui.usr.studentdashboard/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-organization": "cds watch --open cdx.ui.org.organization/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-organization": "cds watch --open cdx.ui.org.organization/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-landingpage": "cds watch --open cdx.ui.landingpage/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "workspaces": [
