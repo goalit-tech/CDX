@@ -7,26 +7,16 @@
     <title>{{appTitle}}</title>
 
     <script>
-      window["sap-landingpage-config"] = {
-        appTitle: "CampusDesk",
+      window["sap-ushell-config"] = {
+        defaultRenderer: "fiori2",
         applications: {
           "Student-manage": {
             title: "Manage Student",
             description: "Manage Student",
-            icon: "sap-icon://student",
             additionalInformation:
               "SAPUI5.Component=cdx.ui.usr.studentdashboard",
             applicationType: "SAPUI5",
-            url: "studentdashboard/webapp",
-            navigationMode: "embedded",
-          },
-          "organizations-manage": {
-            title: "Manage Organizations",
-            description: "Manage Organizations",
-            icon: "sap-icon://building",
-            additionalInformation: "SAPUI5.Component=cdx.ui.org.organization",
-            applicationType: "SAPUI5",
-            url: "organization/webapp",
+            url: 'studentdashboard/webapp',
             navigationMode: "embedded",
           },
         },
@@ -34,13 +24,13 @@
     </script>
 
     <script
-      src="./landingpage-toolpage/landingpage.js"
-      id="sap-landingpage-bootstrap"
+      src="https://sapui5.hana.ondemand.com/1.152.0/test-resources/sap/ushell/bootstrap/sandbox.js"
+      id="sap-ushell-bootstrap"
     ></script>
 
     <script
       src="https://sapui5.hana.ondemand.com/1.152.0/resources/sap-ui-core.js"
-      data-sap-ui-libs="sap.m, sap.tnt, sap.f"
+      data-sap-ui-libs="sap.m, sap.ushell, sap.fe.templates"
       data-sap-ui-compat-version="edge"
       data-sap-ui-theme="sap_horizon"
       data-sap-ui-frame-options="allow"
@@ -50,7 +40,7 @@
 
     <script>
       sap.ui.getCore().attachInit(function () {
-        cdx.landingpage.Container.createRenderer().placeAt("content");
+        sap.ushell.Container.createRenderer().placeAt("content");
       });
     </script>
   </head>

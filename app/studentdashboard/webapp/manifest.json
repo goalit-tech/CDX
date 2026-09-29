@@ -91,11 +91,23 @@
   },
   "sap.ovp": {
     "globalFilterModel": "mainModel",
-    "globalFilterEntitySet": "Section",
+    "globalFilterEntitySet": "Students",
     "containerLayout": "resizable",
     "enableLiveFilter": true,
     "considerAnalyticalParameters": false,
-    "cards": {},
+    "cards": {
+      "students_list": {
+        "model": "mainModel",
+        "template": "sap.ovp.cards.list",
+        "settings": {
+          "title": "{{studentsCardTitle}}",
+          "entitySet": "Students",
+          "sortOrder": "asc",
+          "listType": "condensed",
+          "listFlavor": "standard"
+        }
+      }
+    },
     "globalFilterControlType": "MacroFilterBar"
   },
   "sap.fiori": {
