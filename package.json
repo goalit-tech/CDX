@@ -18,5 +18,26 @@
   ],
   "sapux": [
     "app/studentdashboard"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "admin": {
+            "password": "Admin@123",
+            "roles": [
+              "admin"
+            ]
+          },
+          "faculty": {
+            "password": "Faculty@123",
+            "roles": [
+              "faculty"
+            ]
+          }
+        }
+      }
+    }
+  }
 }
