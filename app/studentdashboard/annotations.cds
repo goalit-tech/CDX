@@ -14,22 +14,22 @@ annotate service.Students with @(
     ],
     UI.LineItem           : [
         {Value: studentName, Label: 'Student Name'},
-        {Value: gender, Label: 'Gender'},
-        {Value: dateOfBirth, Label: 'Date of Birth'},
         {Value: email, Label: 'Email'},
+        {Value: guardianName, Label: 'Guardian'},
+        {Value: gender, Label: 'Gender'},
         {Value: phone, Label: 'Phone'},
         {Value: admissionDate, Label: 'Admission Date'},
     ],
     UI.PresentationVariant: {
-        Text          : 'Students Overview',
-        SortOrder     : [{Property: studentName, Descending: false}],
+        Text          : 'Student Dashboard',
+        SortOrder     : [{Property: admissionDate, Descending: true}],
         Visualizations: ['@UI.LineItem'],
     },
 ) {
     studentName   @title: 'Student Name';
     email         @title: 'Email';
+    guardianName  @title: 'Guardian';
     gender        @title: 'Gender';
-    dateOfBirth   @title: 'Date of Birth';
     phone         @title: 'Phone';
     admissionDate @title: 'Admission Date';
 };

@@ -1,1 +1,62 @@
 /* Enter your custom styles here */
+.dashboardKpiContainer {
+  width: 100%;
+  gap: 1rem;
+}
+
+.dashboardKpiCard {
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  min-height: 8rem;
+  box-sizing: border-box;
+
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.06);
+}
+
+.dashboardKpiTop {
+  width: 100%;
+}
+
+.dashboardKpiIcon {
+  width: 3.25rem;
+  height: 3.25rem;
+  min-width: 3.25rem;
+  border-radius: 50%;
+}
+
+.dashboardKpiIconBlue {
+  background: #e5f2ff;
+}
+
+.dashboardKpiIconGreen {
+  background: #e2f5ed;
+}
+
+.dashboardKpiIconPurple {
+  background: #eee7ff;
+}
+
+.dashboardKpiIconButton {
+  color: #0070f2 !important;
+}
+
+.dashboardKpiTitle {
+  font-size: 0.875rem;
+  color: #334e68;
+  font-weight: 500;
+}
+
+.dashboardKpiValue {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #0a2540 !important;
+  margin-top: 0.15rem;
+}
+
+.dashboardKpiDescription {
+  font-size: 0.75rem;
+  color: #60758a;
+  margin-top: 0.75rem;
+}

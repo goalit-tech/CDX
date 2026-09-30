@@ -1,6 +1,695 @@
-<mvc:View controllerName="cdx.ui.landingpage.controller.Dashboard"
+<mvc:View
+    controllerName="cdx.ui.landingpage.controller.Dashboard"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:layout="sap.ui.layout"
+>
+    <tnt:ToolPage
+        id="campusDeskToolPage"
+        sideExpanded="true"
+    >
+        <!-- ================================================= -->
+        <!-- HEADER                                            -->
+        <!-- ================================================= -->
+
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Button
+                    icon="sap-icon://menu2"
+                    type="Transparent"
+                    tooltip="Toggle Navigation"
+                    press=".onToggleSideNavigation"
+                />
+
+                <Button
+                    icon="sap-icon://education"
+                    type="Transparent"
+                    tooltip="CampusDesk Home"
+                    press=".onHomePress"
+                />
+
+                <Title
+                    text="CampusDesk"
+                    level="H2"
+                />
+
+                <ToolbarSeparator />
+
+                <Text
+                    text="School Management"
+                    class="sapUiSmallMarginBegin"
+                />
+
+                <ToolbarSpacer />
+
+                <SearchField
+                    width="14rem"
+                    placeholder="Search CampusDesk"
+                    tooltip="Search"
+                />
+
+                <Button
+                    icon="sap-icon://bell"
+                    type="Transparent"
+                    tooltip="Notifications"
+                    press=".onNotificationsPress"
+                />
+
+                <Avatar
+                    initials="{dashboard>/userInitials}"
+                    displaySize="XS"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+                />
+
+                <Button
+                    text="{dashboard>/userName}"
+                    icon="sap-icon://slim-arrow-down"
+                    iconFirst="false"
+                    type="Transparent"
+                    press=".onProfilePress"
+                />
+            </tnt:ToolHeader>
+        </tnt:header>
+
+        <!-- ================================================= -->
+        <!-- SIDE NAVIGATION                                   -->
+        <!-- ================================================= -->
+
+        <tnt:sideContent>
+            <tnt:SideNavigation
+                id="dashboardSideNavigation"
+                expanded="true"
+                itemSelect=".onNavigationSelect"
+            >
+                <tnt:item>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem
+                            key="home"
+                            text="Home"
+                            icon="sap-icon://home"
+                            selected="true"
+                        />
+
+                        <tnt:NavigationListItem
+                            key="organizations"
+                            text="Organizations"
+                            icon="sap-icon://building"
+                        />
+
+                        <tnt:NavigationListItem
+                            key="campus"
+                            text="Campuses"
+                            icon="sap-icon://map"
+                        />
+
+                        <tnt:NavigationListItem
+                            key="academicYears"
+                            text="Academic Years"
+                            icon="sap-icon://calendar"
+                        />
+
+                        <tnt:NavigationListItem
+                            key="students"
+                            text="Students"
+                            icon="sap-icon://group"
+                        />
+
+                        <tnt:NavigationListItem
+                            key="employees"
+                            text="Employees"
+                            icon="sap-icon://employee"
+                        />
+
+                        <tnt:NavigationListItem
+                            key="roles"
+                            text="Roles &amp; Access"
+                            icon="sap-icon://key"
+                        />
+                    </tnt:NavigationList>
+                </tnt:item>
+
+                <tnt:fixedItem>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem
+                            key="settings"
+                            text="Settings"
+                            icon="sap-icon://action-settings"
+                        />
+
+                        <tnt:NavigationListItem
+                            key="support"
+                            text="Help &amp; Support"
+                            icon="sap-icon://sys-help"
+                        />
+                    </tnt:NavigationList>
+                </tnt:fixedItem>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+
+        <!-- ================================================= -->
+        <!-- MAIN DASHBOARD CONTENT                            -->
+        <!-- ================================================= -->
+
+        <tnt:mainContents>
+            <Page
+                id="dashboardMainPage"
+                showHeader="false"
+                enableScrolling="false"
+            >
+                <content>
+                    <ScrollContainer
+                        id="dashboardScroll"
+                        width="100%"
+                        height="100%"
+                        vertical="true"
+                        horizontal="false"
+                    >
+                        <VBox
+                            id="dashboardContent"
+                            width="100%"
+                            class="sapUiResponsiveContentPadding"
+                        >
+                            <!-- ================================= -->
+                            <!-- WELCOME                            -->
+                            <!-- ================================= -->
+
+                            <HBox
+                                width="100%"
+                                justifyContent="SpaceBetween"
+                                alignItems="Center"
+                                wrap="Wrap"
+                                class="dashboardWelcome"
+                            >
+                                <VBox class="sapUiSmallMarginEnd">
+                                    <Title
+                                        text="Good Morning,"
+                                        level="H3"
+                                    />
+
+                                    <Title
+                                        text="{dashboard>/userName}"
+                                        level="H1"
+                                    />
+
+                                    <Text
+                                        text="Welcome to your CampusDesk dashboard."
+                                        class="sapUiTinyMarginTop"
+                                    />
+
+                                    <ObjectStatus
+                                        text="{dashboard>/userRole}"
+                                        icon="sap-icon://person-placeholder"
+                                        state="Information"
+                                        class="sapUiSmallMarginTop"
+                                    />
+                                </VBox>
+
+                                <VBox
+                                    class="dashboardWelcomeBanner"
+                                    justifyContent="Center"
+                                >
+                                    <Title
+                                        text="Learn Today"
+                                        level="H2"
+                                    />
+
+                                    <Title
+                                        text="Build Tomorrow"
+                                        level="H2"
+                                    />
+
+                                    <Text
+                                        text="Empowering Education for a Brighter Tomorrow"
+                                    />
+                                </VBox>
+                            </HBox>
+
+                            <!-- ================================= -->
+                            <!-- KPI TILES                          -->
+                            <!-- ================================= -->
+
+                            <Title
+                                text="School Overview"
+                                level="H2"
+                                class="sapUiLargeMarginTop sapUiSmallMarginBottom"
+                            />
+
+                            <layout:Grid
+                                id="kpiGrid"
+                                width="100%"
+                                defaultSpan="XL3 L3 M6 S12"
+                                hSpacing="1"
+                                vSpacing="1"
+                            >
+                                <layout:content>
+                                    <!-- Organizations -->
+
+                                    <GenericTile
+                                        id="organizationsKpi"
+                                        header="Organizations"
+                                        subheader="Registered organizations"
+                                        frameType="OneByOne"
+                                        press=".onOrganizationsPress"
+                                    >
+                                        <TileContent>
+                                            <NumericContent
+                                                value="{dashboard>/organizationCount}"
+                                                icon="sap-icon://building"
+                                                valueColor="Neutral"
+                                                withMargin="false"
+                                                truncateValueTo="6"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+
+                                    <!-- Campuses -->
+
+                                    <GenericTile
+                                        id="campusKpi"
+                                        header="Campuses"
+                                        subheader="School branches"
+                                        frameType="OneByOne"
+                                        press=".onCampusPress"
+                                    >
+                                        <TileContent>
+                                            <NumericContent
+                                                value="{dashboard>/campusCount}"
+                                                icon="sap-icon://home"
+                                                valueColor="Neutral"
+                                                withMargin="false"
+                                                truncateValueTo="6"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+
+                                    <!-- Students -->
+
+                                    <GenericTile
+                                        id="studentsKpi"
+                                        header="Students"
+                                        subheader="Registered students"
+                                        frameType="OneByOne"
+                                        press=".onStudentsPress"
+                                    >
+                                        <TileContent>
+                                            <NumericContent
+                                                value="{dashboard>/studentCount}"
+                                                icon="sap-icon://group"
+                                                valueColor="Neutral"
+                                                withMargin="false"
+                                                truncateValueTo="6"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+
+                                    <!-- Employees -->
+
+                                    <GenericTile
+                                        id="employeesKpi"
+                                        header="Employees"
+                                        subheader="Teachers and staff"
+                                        frameType="OneByOne"
+                                        press=".onEmployeesPress"
+                                    >
+                                        <TileContent>
+                                            <NumericContent
+                                                value="{dashboard>/employeeCount}"
+                                                icon="sap-icon://employee"
+                                                valueColor="Neutral"
+                                                withMargin="false"
+                                                truncateValueTo="6"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+                                </layout:content>
+                            </layout:Grid>
+
+                            <!-- ================================= -->
+                            <!-- ACADEMIC YEARS + QUICK ACCESS     -->
+                            <!-- ================================= -->
+
+                            <layout:Grid
+                                id="overviewGrid"
+                                width="100%"
+                                defaultSpan="XL8 L8 M12 S12"
+                                hSpacing="1"
+                                vSpacing="1"
+                                class="sapUiMediumMarginTop"
+                            >
+                                <layout:content>
+                                    <!-- Academic Years -->
+
+                                    <VBox
+                                        id="academicYearsPanel"
+                                        class="dashboardPanel"
+                                    >
+                                        <HBox
+                                            justifyContent="SpaceBetween"
+                                            alignItems="Center"
+                                        >
+                                            <VBox>
+                                                <Title
+                                                    text="Academic Years"
+                                                    level="H2"
+                                                />
+
+                                                <Text
+                                                    text="Configured academic sessions"
+                                                />
+                                            </VBox>
+
+                                            <Button
+                                                text="View All"
+                                                type="Transparent"
+                                                press=".onAcademicYearsPress"
+                                            />
+                                        </HBox>
+
+                                        <Table
+                                            id="academicYearsTable"
+                                            items="{path: '/AcademicYears'}"
+                                            growing="true"
+                                            growingThreshold="5"
+                                            class="sapUiSmallMarginTop"
+                                        >
+                                            <columns>
+                                                <Column>
+                                                    <Text
+                                                        text="Academic Year"
+                                                    />
+                                                </Column>
+
+                                                <Column>
+                                                    <Text text="Start Date" />
+                                                </Column>
+
+                                                <Column>
+                                                    <Text text="End Date" />
+                                                </Column>
+
+                                                <Column>
+                                                    <Text text="Current" />
+                                                </Column>
+                                            </columns>
+
+                                            <items>
+                                                <ColumnListItem>
+                                                    <cells>
+                                                        <Text
+                                                            text="{yearLabel}"
+                                                        />
+
+                                                        <Text
+                                                            text="{startDate}"
+                                                        />
+
+                                                        <Text
+                                                            text="{endDate}"
+                                                        />
+
+                                                        <ObjectStatus
+                                                            text="{= ${isCurrentSession} ? 'Current' : 'Previous' }"
+                                                            state="{= ${isCurrentSession} ? 'Success' : 'None' }"
+                                                        />
+                                                    </cells>
+                                                </ColumnListItem>
+                                            </items>
+                                        </Table>
+                                    </VBox>
+
+                                    <!-- Quick Access -->
+
+                                    <VBox
+                                        id="quickAccessPanel"
+                                        class="dashboardPanel"
+                                    >
+                                        <Title
+                                            text="Quick Access"
+                                            level="H2"
+                                        />
+
+                                        <Text
+                                            text="Frequently used areas"
+                                            class="sapUiTinyMarginBottom"
+                                        />
+
+                                        <List showSeparators="Inner">
+                                            <StandardListItem
+                                                title="Manage Students"
+                                                description="Student records"
+                                                icon="sap-icon://group"
+                                                type="Navigation"
+                                                press=".onStudentsPress"
+                                            />
+
+                                            <StandardListItem
+                                                title="Manage Employees"
+                                                description="Teachers and staff"
+                                                icon="sap-icon://employee"
+                                                type="Navigation"
+                                                press=".onEmployeesPress"
+                                            />
+
+                                            <StandardListItem
+                                                title="Manage Campuses"
+                                                description="School branches"
+                                                icon="sap-icon://home"
+                                                type="Navigation"
+                                                press=".onCampusPress"
+                                            />
+
+                                            <StandardListItem
+                                                title="Academic Years"
+                                                description="Academic configuration"
+                                                icon="sap-icon://calendar"
+                                                type="Navigation"
+                                                press=".onAcademicYearsPress"
+                                            />
+
+                                            <StandardListItem
+                                                title="Roles"
+                                                description="Role management"
+                                                icon="sap-icon://key"
+                                                type="Navigation"
+                                                press=".onRolesPress"
+                                            />
+                                        </List>
+                                    </VBox>
+                                </layout:content>
+                            </layout:Grid>
+
+                            <!-- ================================= -->
+                            <!-- STUDENTS + EMPLOYEES              -->
+                            <!-- ================================= -->
+
+                            <layout:Grid
+                                id="peopleGrid"
+                                width="100%"
+                                defaultSpan="XL6 L6 M12 S12"
+                                hSpacing="1"
+                                vSpacing="1"
+                                class="sapUiMediumMarginTop"
+                            >
+                                <layout:content>
+                                    <!-- Students -->
+
+                                    <VBox
+                                        id="studentsPanel"
+                                        class="dashboardPanel"
+                                    >
+                                        <HBox
+                                            justifyContent="SpaceBetween"
+                                            alignItems="Center"
+                                        >
+                                            <Title
+                                                text="Students"
+                                                level="H2"
+                                            />
+
+                                            <Button
+                                                text="View All"
+                                                type="Transparent"
+                                                press=".onStudentsPress"
+                                            />
+                                        </HBox>
+
+                                        <Table
+                                            id="studentsTable"
+                                            items="{path: '/Students'}"
+                                            growing="true"
+                                            growingThreshold="5"
+                                            class="sapUiSmallMarginTop"
+                                        >
+                                            <columns>
+                                                <Column>
+                                                    <Text text="Student" />
+                                                </Column>
+
+                                                <Column>
+                                                    <Text
+                                                        text="Admission Number"
+                                                    />
+                                                </Column>
+                                            </columns>
+
+                                            <items>
+                                                <ColumnListItem>
+                                                    <cells>
+                                                        <ObjectIdentifier
+                                                            title="{firstName}"
+                                                            text="{lastName}"
+                                                        />
+
+                                                        <Text
+                                                            text="{admissionNumber}"
+                                                        />
+                                                    </cells>
+                                                </ColumnListItem>
+                                            </items>
+                                        </Table>
+                                    </VBox>
+
+                                    <!-- Employees -->
+
+                                    <VBox
+                                        id="employeesPanel"
+                                        class="dashboardPanel"
+                                    >
+                                        <HBox
+                                            justifyContent="SpaceBetween"
+                                            alignItems="Center"
+                                        >
+                                            <Title
+                                                text="Employees"
+                                                level="H2"
+                                            />
+
+                                            <Button
+                                                text="View All"
+                                                type="Transparent"
+                                                press=".onEmployeesPress"
+                                            />
+                                        </HBox>
+
+                                        <Table
+                                            id="employeesTable"
+                                            items="{path: '/Employees'}"
+                                            growing="true"
+                                            growingThreshold="5"
+                                            class="sapUiSmallMarginTop"
+                                        >
+                                            <columns>
+                                                <Column>
+                                                    <Text text="Employee" />
+                                                </Column>
+
+                                                <Column>
+                                                    <Text text="Email" />
+                                                </Column>
+                                            </columns>
+
+                                            <items>
+                                                <ColumnListItem>
+                                                    <cells>
+                                                        <ObjectIdentifier
+                                                            title="{firstName}"
+                                                            text="{lastName}"
+                                                        />
+
+                                                        <Text text="{email}" />
+                                                    </cells>
+                                                </ColumnListItem>
+                                            </items>
+                                        </Table>
+                                    </VBox>
+                                </layout:content>
+                            </layout:Grid>
+
+                            <!-- ================================= -->
+                            <!-- CAMPUSES                          -->
+                            <!-- ================================= -->
+
+                            <VBox
+                                id="campusPanel"
+                                class="dashboardPanel sapUiMediumMarginTop"
+                            >
+                                <HBox
+                                    justifyContent="SpaceBetween"
+                                    alignItems="Center"
+                                >
+                                    <VBox>
+                                        <Title
+                                            text="Campuses"
+                                            level="H2"
+                                        />
+
+                                        <Text
+                                            text="School branches and locations"
+                                        />
+                                    </VBox>
+
+                                    <Button
+                                        text="View All"
+                                        type="Transparent"
+                                        press=".onCampusPress"
+                                    />
+                                </HBox>
+
+                                <Table
+                                    id="campusTable"
+                                    items="{path: '/Campus'}"
+                                    growing="true"
+                                    growingThreshold="5"
+                                    class="sapUiSmallMarginTop"
+                                >
+                                    <columns>
+                                        <Column>
+                                            <Text text="Campus" />
+                                        </Column>
+
+                                        <Column>
+                                            <Text text="City" />
+                                        </Column>
+
+                                        <Column>
+                                            <Text text="Branch Code" />
+                                        </Column>
+                                    </columns>
+
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{campusName}" />
+
+                                                <Text text="{city}" />
+
+                                                <Text text="{branchCode}" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+
+                            <!-- ================================= -->
+                            <!-- FOOTER                            -->
+                            <!-- ================================= -->
+
+                            <Toolbar
+                                class="sapUiMediumMarginTop sapUiSmallMarginBottom"
+                            >
+                                <Text text="CampusDesk" />
+
+                                <ToolbarSpacer />
+
+                                <Text
+                                    text="Empowering Education for a Brighter Tomorrow"
+                                />
+                            </Toolbar>
+                        </VBox>
+                    </ScrollContainer>
+                </content>
+            </Page>
+        </tnt:mainContents>
+    </tnt:ToolPage>
 </mvc:View>
