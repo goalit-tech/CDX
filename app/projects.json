@@ -5,6 +5,11 @@
       "name": "cdx.ui.dashbaord",
       "url": "/cdx.ui.dashbaord/",
       "title": "Dashboard"
+    },
+    "landingpageui": {
+      "name": "cdx.ui.landingpageui",
+      "url": "/cdx.ui.landingpageui/",
+      "title": "Landing Page UI"
     }
   }
 }

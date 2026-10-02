@@ -1,0 +1,1 @@
+using cdx.dsb.service.DashboardService as service from '../../srv/dashboard/dashboardService';
