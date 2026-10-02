@@ -1,1 +1,0 @@
-using siemens.cdx.org.service.OrganizationService as service from '../../srv/organizationSetup/organization/organizationService';
