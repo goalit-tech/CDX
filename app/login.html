@@ -43,20 +43,7 @@
             #loginForm { padding: 1.5rem; }
         }
         html:has(.cdxHost), body.cdxHost, #app { height: 100%; margin: 0; }
-        #app { display: grid; grid-template-rows: 3rem minmax(0, 1fr); }
-        #app > header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0 1rem;
-            border-bottom: 1px solid #d5dadd;
-            background: #fff;
-            font-family: "Segoe UI", sans-serif;
-        }
-        #projectTitle { margin: 0; font-size: 1rem; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        #userName { max-width: 30vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        #logoutLink { color: #0070f2; white-space: nowrap; }
-        #content { min-height: 0; overflow: auto; }
+        #content { height: 100%; overflow: auto; }
         #container, #container-uiarea { height: 100%; }
     </style>
     <script src="/auth.js" defer></script>
@@ -75,11 +62,6 @@
     </form>
     <template id="componentHost">
         <div id="app">
-            <header>
-                <h1 id="projectTitle">CDX</h1>
-                <span id="userName"></span>
-                <a id="logoutLink" href="/logout.html">Log Out</a>
-            </header>
             <main id="content"></main>
         </div>
     </template>

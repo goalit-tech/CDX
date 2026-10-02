@@ -8,12 +8,19 @@
     displayBlock="true"
     height="100%"
 >
+    <mvc:dependents>
+        <m:Menu id="userMenu">
+            <m:MenuItem id="logoutMenuItem" text="{i18n>navLogout}" icon="sap-icon://log" press="onLogout"/>
+        </m:Menu>
+    </mvc:dependents>
     <ToolPage id="toolPage">
         <header>
             <ToolHeader id="toolHeader">
                 <m:Button id="menuButton" icon="sap-icon://menu2" type="Transparent" tooltip="{i18n>toggleNav}" press="onToggleSideNav"/>
                 <m:Title id="headerTitle" text="{i18n>appTitle}" level="H2" titleStyle="H5" wrapping="false" class="sapUiTinyMarginBegin"/>
                 <m:ToolbarSpacer id="headerSpacer"/>
+                <m:Text id="userNameText" text="{app>/displayName}" wrapping="false" width="8rem" textAlign="End" class="sapUiTinyMarginEnd"/>
+                <m:Avatar id="userAvatar" initials="{app>/initials}" displaySize="XS" tooltip="{i18n>userMenu}" press="onAvatarPress"/>
             </ToolHeader>
         </header>
         <sideContent>
@@ -43,7 +50,7 @@
             </SideNavigation>
         </sideContent>
         <mainContents>
-            <m:Page id="homePage" showHeader="false" class="sapUiContentPadding" visible="{= ${app>/view} === 'home' }">
+            <m:Page id="homePage" showHeader="false" class="sapUiContentPadding">
                 <m:VBox id="homeContentBox">
                     <m:Title id="welcomeTitle" text="{app>/welcomeText}" level="H2" class="sapUiSmallMarginBottom"/>
                     <m:Text id="landingSubtitleText" text="{i18n>landingSubtitle}" class="sapUiMediumMarginBottom"/>
@@ -114,14 +121,6 @@
                         </m:GenericTile>
                     </m:FlexBox>
                 </m:VBox>
-            </m:Page>
-            <m:Page id="comingSoonPage" showHeader="false" class="sapUiContentPadding" visible="{= ${app>/view} !== 'home' }">
-                <m:IllustratedMessage
-                    id="comingSoonMessage"
-                    illustrationType="sapIllus-NoData"
-                    title="{app>/comingSoonTitle}"
-                    description="{i18n>comingSoonDescription}"
-                />
             </m:Page>
         </mainContents>
     </ToolPage>

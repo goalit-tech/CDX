@@ -88,6 +88,61 @@
           "name": "OrganizationMain",
           "pattern": ":?query:",
           "target": "OrganizationMain"
+        },
+        {
+          "name": "AcademicYear",
+          "pattern": "academic-year:?query:",
+          "target": "AcademicYear"
+        },
+        {
+          "name": "Organizations",
+          "pattern": "organizations:?query:",
+          "target": "Organizations"
+        },
+        {
+          "name": "CalendarEvents",
+          "pattern": "calendar-events:?query:",
+          "target": "CalendarEvents"
+        },
+        {
+          "name": "Campus",
+          "pattern": "campus:?query:",
+          "target": "Campus"
+        },
+        {
+          "name": "Grade",
+          "pattern": "grade:?query:",
+          "target": "Grade"
+        },
+        {
+          "name": "Section",
+          "pattern": "section:?query:",
+          "target": "Section"
+        },
+        {
+          "name": "Employees",
+          "pattern": "employees:?query:",
+          "target": "Employees"
+        },
+        {
+          "name": "Students",
+          "pattern": "students:?query:",
+          "target": "Students"
+        },
+        {
+          "name": "Enrollment",
+          "pattern": "enrollment:?query:",
+          "target": "Enrollment"
+        },
+        {
+          "name": "Roles",
+          "pattern": "roles:?query:",
+          "target": "Roles"
+        },
+        {
+          "name": "RoleAssignments",
+          "pattern": "role-assignments:?query:",
+          "target": "RoleAssignments"
         }
       ],
       "targets": {
@@ -100,6 +155,149 @@
               "navigation": {},
               "contextPath": "/Organization",
               "viewName": "cdx.ui.dashbaord.view.Landing"
+            }
+          }
+        },
+        "AcademicYear": {
+          "type": "Component",
+          "id": "AcademicYear",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.AcademicYear"
+            }
+          }
+        },
+        "Organizations": {
+          "type": "Component",
+          "id": "Organizations",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "CalendarEvents": {
+          "type": "Component",
+          "id": "CalendarEvents",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "Campus": {
+          "type": "Component",
+          "id": "Campus",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "Grade": {
+          "type": "Component",
+          "id": "Grade",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "Section": {
+          "type": "Component",
+          "id": "Section",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "Employees": {
+          "type": "Component",
+          "id": "Employees",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "Students": {
+          "type": "Component",
+          "id": "Students",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "Enrollment": {
+          "type": "Component",
+          "id": "Enrollment",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "Roles": {
+          "type": "Component",
+          "id": "Roles",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "RoleAssignments": {
+          "type": "Component",
+          "id": "RoleAssignments",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.Module"
             }
           }
         }

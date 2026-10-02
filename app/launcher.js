@@ -59,9 +59,6 @@ sap.ui.define([
         });
 
         document.title = project.title || project.name;
-        document.getElementById("projectTitle").textContent = document.title;
-        document.getElementById("userName").textContent = auth.getUser().id || "";
-        document.getElementById("logoutLink").href = "/logout.html";
 
         var component = await Component.create({
             name: project.name,
