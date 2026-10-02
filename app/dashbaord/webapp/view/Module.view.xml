@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="cdx.ui.dashbaord.view.Module"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    height="100%"
+>
+    <Page id="modulePage" title="{page>/title}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <IllustratedMessage
+                id="moduleMessage"
+                illustrationType="sapIllus-NoData"
+                title="{page>/title}"
+                description="{i18n>comingSoonDescription}"
+            />
+        </content>
+    </Page>
+</mvc:View>
