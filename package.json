@@ -11,15 +11,12 @@
   "scripts": {
     "start": "cds-serve",
     "watch-dashbaord": "cds watch --open login.html --livereload false",
-    "watch-landingpageui": "cds watch --open cdx.ui.landingpageui/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "workspaces": [
     "app/*"
   ],
   "sapux": [
-    "app/studentdashboard",
-    "app/organization",
     "app/dashbaord"
   ],
   "cds": {
