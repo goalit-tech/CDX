@@ -1,0 +1,128 @@
+<mvc:View
+    controllerName="cdx.ui.dashbaord.view.Landing"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.tnt"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    height="100%"
+>
+    <ToolPage id="toolPage">
+        <header>
+            <ToolHeader id="toolHeader">
+                <m:Button id="menuButton" icon="sap-icon://menu2" type="Transparent" tooltip="{i18n>toggleNav}" press="onToggleSideNav"/>
+                <m:Title id="headerTitle" text="{i18n>appTitle}" level="H2" titleStyle="H5" wrapping="false" class="sapUiTinyMarginBegin"/>
+                <m:ToolbarSpacer id="headerSpacer"/>
+            </ToolHeader>
+        </header>
+        <sideContent>
+            <SideNavigation id="sideNav" itemSelect="onItemSelect">
+                <NavigationList id="mainNavList">
+                    <NavigationListItem id="navItemHome" text="{i18n>navHome}" key="home" icon="sap-icon://home"/>
+                    <NavigationListItem id="navItemOrgSetup" text="{i18n>navOrgSetup}" icon="sap-icon://org-chart" expanded="true">
+                        <items>
+                            <NavigationListItem id="navItemOrganization" text="{i18n>navOrganizations}" key="organization" icon="sap-icon://building"/>
+                            <NavigationListItem id="navItemAcademicYear" text="{i18n>navAcademicYear}" key="academic-year" icon="sap-icon://calendar"/>
+                            <NavigationListItem id="navItemCalendarEvent" text="{i18n>navCalendarEvent}" key="calendar-event" icon="sap-icon://appointment-2"/>
+                            <NavigationListItem id="navItemCampus" text="{i18n>navCampus}" key="campus" icon="sap-icon://retail-store"/>
+                            <NavigationListItem id="navItemGrade" text="{i18n>navGrade}" key="grade" icon="sap-icon://education"/>
+                            <NavigationListItem id="navItemSection" text="{i18n>navSection}" key="section" icon="sap-icon://list"/>
+                        </items>
+                    </NavigationListItem>
+                    <NavigationListItem id="navItemUserMgmt" text="{i18n>navUserMgmt}" icon="sap-icon://group">
+                        <items>
+                            <NavigationListItem id="navItemEmployee" text="{i18n>navEmployee}" key="employee" icon="sap-icon://employee"/>
+                            <NavigationListItem id="navItemStudent" text="{i18n>navStudent}" key="student" icon="sap-icon://student"/>
+                            <NavigationListItem id="navItemEnrollment" text="{i18n>navEnrollment}" key="enrollment" icon="sap-icon://add-employee"/>
+                            <NavigationListItem id="navItemRole" text="{i18n>navRole}" key="role" icon="sap-icon://key-user-settings"/>
+                            <NavigationListItem id="navItemRoleAssignment" text="{i18n>navRoleAssignment}" key="role-assignment" icon="sap-icon://user-settings"/>
+                        </items>
+                    </NavigationListItem>
+                </NavigationList>
+            </SideNavigation>
+        </sideContent>
+        <mainContents>
+            <m:Page id="homePage" showHeader="false" class="sapUiContentPadding" visible="{= ${app>/view} === 'home' }">
+                <m:VBox id="homeContentBox">
+                    <m:Title id="welcomeTitle" text="{app>/welcomeText}" level="H2" class="sapUiSmallMarginBottom"/>
+                    <m:Text id="landingSubtitleText" text="{i18n>landingSubtitle}" class="sapUiMediumMarginBottom"/>
+                    <m:FlexBox id="tileGrid" wrap="Wrap" class="cdxTileGrid">
+                        <m:GenericTile id="tileOrganization" header="{i18n>navOrganizations}" subheader="{i18n>tileOrganizationsSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="organization"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentOrganization"><m:content><core:Icon id="tileIconOrganization" src="sap-icon://building" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                        <m:GenericTile id="tileAcademicYear" header="{i18n>navAcademicYear}" subheader="{i18n>tileComingSoonSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="academic-year"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentAcademicYear"><m:content><core:Icon id="tileIconAcademicYear" src="sap-icon://calendar" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                        <m:GenericTile id="tileCalendarEvent" header="{i18n>navCalendarEvent}" subheader="{i18n>tileComingSoonSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="calendar-event"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentCalendarEvent"><m:content><core:Icon id="tileIconCalendarEvent" src="sap-icon://appointment-2" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                        <m:GenericTile id="tileCampus" header="{i18n>navCampus}" subheader="{i18n>tileComingSoonSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="campus"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentCampus"><m:content><core:Icon id="tileIconCampus" src="sap-icon://retail-store" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                        <m:GenericTile id="tileGrade" header="{i18n>navGrade}" subheader="{i18n>tileComingSoonSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="grade"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentGrade"><m:content><core:Icon id="tileIconGrade" src="sap-icon://education" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                        <m:GenericTile id="tileSection" header="{i18n>navSection}" subheader="{i18n>tileComingSoonSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="section"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentSection"><m:content><core:Icon id="tileIconSection" src="sap-icon://list" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                        <m:GenericTile id="tileEmployee" header="{i18n>navEmployee}" subheader="{i18n>tileComingSoonSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="employee"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentEmployee"><m:content><core:Icon id="tileIconEmployee" src="sap-icon://employee" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                        <m:GenericTile id="tileStudent" header="{i18n>navStudent}" subheader="{i18n>tileComingSoonSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <m:customData>
+                                <core:CustomData key="target" value="student"/>
+                            </m:customData>
+                            <m:tileContent>
+                                <m:TileContent id="tileContentStudent"><m:content><core:Icon id="tileIconStudent" src="sap-icon://student" size="2rem"/></m:content></m:TileContent>
+                            </m:tileContent>
+                        </m:GenericTile>
+                    </m:FlexBox>
+                </m:VBox>
+            </m:Page>
+            <m:Page id="comingSoonPage" showHeader="false" class="sapUiContentPadding" visible="{= ${app>/view} !== 'home' }">
+                <m:IllustratedMessage
+                    id="comingSoonMessage"
+                    illustrationType="sapIllus-NoData"
+                    title="{app>/comingSoonTitle}"
+                    description="{i18n>comingSoonDescription}"
+                />
+            </m:Page>
+        </mainContents>
+    </ToolPage>
+</mvc:View>

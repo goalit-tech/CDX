@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - CDX</title>
+    <style>
+        #loginForm, #loginForm * { box-sizing: border-box; }
+        body:not(.cdxHost) {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            font-family: "Segoe UI", sans-serif;
+            color: #1d2d3e;
+            background: linear-gradient(135deg, #eef2f7 0%, #dce6f2 100%);
+        }
+        #loginForm {
+            width: 100%;
+            max-width: 24rem;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+        }
+        #loginForm h1 { margin: 0; font-size: 1.5rem; }
+        #loginForm p { margin: 0.5rem 0 1.5rem; color: #556b82; }
+        #loginForm label { display: block; margin-bottom: 0.5rem; }
+        #loginForm input, #loginForm button {
+            width: 100%;
+            min-height: 2.75rem;
+            border-radius: 4px;
+            font: inherit;
+        }
+        #loginForm input { border: 1px solid #758ca4; padding: 0.5rem; margin-bottom: 1rem; }
+        #loginForm button { border: 0; background: #0070f2; color: #fff; cursor: pointer; }
+        #loginForm button:disabled { opacity: 0.6; cursor: wait; }
+        #loginForm :focus-visible { outline: 2px solid #0070f2; outline-offset: 3px; }
+        #errorStrip { color: #aa0808; background: #fff1f1; padding: 0.75rem; border-radius: 4px; }
+        [hidden] { display: none; }
+        @media (max-width: 400px) {
+            #loginForm { padding: 1.5rem; }
+        }
+        html:has(.cdxHost), body.cdxHost, #app { height: 100%; margin: 0; }
+        #app { display: grid; grid-template-rows: 3rem minmax(0, 1fr); }
+        #app > header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 1rem;
+            border-bottom: 1px solid #d5dadd;
+            background: #fff;
+            font-family: "Segoe UI", sans-serif;
+        }
+        #projectTitle { margin: 0; font-size: 1rem; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        #userName { max-width: 30vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        #logoutLink { color: #0070f2; white-space: nowrap; }
+        #content { min-height: 0; overflow: auto; }
+        #container, #container-uiarea { height: 100%; }
+    </style>
+    <script src="/auth.js" defer></script>
+    <script src="/login.js" defer></script>
+</head>
+<body>
+    <form id="loginForm" novalidate>
+        <h1>CDX</h1>
+        <p>Sign in to continue</p>
+        <p id="errorStrip" role="alert" hidden></p>
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" placeholder="Enter your username" required autofocus>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+        <button id="signInButton" type="submit">Sign In</button>
+    </form>
+    <template id="componentHost">
+        <div id="app">
+            <header>
+                <h1 id="projectTitle">CDX</h1>
+                <span id="userName"></span>
+                <a id="logoutLink" href="/logout.html">Log Out</a>
+            </header>
+            <main id="content"></main>
+        </div>
+    </template>
+</body>
+</html>

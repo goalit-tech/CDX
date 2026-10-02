@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signing out...</title>
+</head>
+<body>
+    <script src="/auth.js"></script>
+    <script>
+        window.CDXAuth.signOut();
+        window.location.replace(window.CDXAuth.getLoginUrl());
+    </script>
+</body>
+</html>

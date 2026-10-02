@@ -1,0 +1,10 @@
+{
+  "defaultProject": "dashboard",
+  "projects": {
+    "dashboard": {
+      "name": "cdx.ui.dashbaord",
+      "url": "/cdx.ui.dashbaord/",
+      "title": "Dashboard"
+    }
+  }
+}

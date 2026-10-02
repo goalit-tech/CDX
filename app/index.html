@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDX</title>
+</head>
+<body>
+    <script src="/auth.js"></script>
+    <script>
+        if (window.CDXAuth.isLoggedIn()) {
+            window.CDXAuth.getLaunchUrl().then(function (url) {
+                window.location.replace(url);
+            }).catch(function () {
+                window.location.replace(window.CDXAuth.getLoginUrl());
+            });
+        } else {
+            window.location.replace(window.CDXAuth.getLoginUrl());
+        }
+    </script>
+</body>
+</html>
