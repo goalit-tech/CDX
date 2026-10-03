@@ -48,7 +48,7 @@
                 var registry = await response.json();
                 project = registry.defaultProject;
             }
-            return "/login.html?project=" + encodeURIComponent(project);
+            return "/login.html?sap-ui-xx-viewCache=false&project=" + encodeURIComponent(project);
         },
         getLoginUrl: function () {
             return "/login.html";
