@@ -1,1 +1,1 @@
-using siemens.cdx.org.service.Campus from './campusService';
+using cdx.org.service.Campus from './campusService';

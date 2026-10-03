@@ -1,11 +1,11 @@
-namespace siemens.cdx.org;
+namespace cdx.org;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.org.Grade} from './gradeModel';
+using {cdx.org.Grade} from './gradeModel';
 
 entity Section : cuid, managed {
     grade       : Association to Grade; // mandatory

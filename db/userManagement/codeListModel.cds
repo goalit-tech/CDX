@@ -1,4 +1,4 @@
-namespace siemens.cdx.usr;
+namespace cdx.usr;
 
 using {sap.common.CodeList} from '@sap/cds/common';
 

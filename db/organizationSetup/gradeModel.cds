@@ -1,12 +1,12 @@
-namespace siemens.cdx.org;
+namespace cdx.org;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.org.AcademicYear} from './academicYearModel';
-using {siemens.cdx.org.Section} from './sectionModel';
+using {cdx.org.AcademicYear} from './academicYearModel';
+using {cdx.org.Section} from './sectionModel';
 
 entity Grade : cuid, managed {
     academicYear : Association to AcademicYear; // mandatory

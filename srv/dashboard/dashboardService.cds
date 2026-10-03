@@ -1,7 +1,7 @@
 namespace cdx.dsb.service;
 
-using {siemens.cdx.org as orgMModel} from '../../db/organizationSetup';
-using {siemens.cdx.usr as userModel} from '../../db/userManagement';
+using {cdx.org as orgMModel} from '../../db/organizationSetup';
+using {cdx.usr as userModel} from '../../db/userManagement';
 
 @cds.autoexpose: false
 service DashboardService {

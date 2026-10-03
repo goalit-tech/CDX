@@ -1,4 +1,4 @@
-namespace siemens.cdx.org;
+namespace cdx.org;
 
 using {sap.common.CodeList} from '@sap/cds/common';
 

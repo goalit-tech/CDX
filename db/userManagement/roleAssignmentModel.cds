@@ -1,14 +1,14 @@
-namespace siemens.cdx.usr;
+namespace cdx.usr;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.usr.Role} from './roleModel';
-using {siemens.cdx.usr.Employee} from './employeeModel';
-using {siemens.cdx.usr.Student} from './studentModel';
-using {siemens.cdx.common.Status} from '../common';
+using {cdx.usr.Role} from './roleModel';
+using {cdx.usr.Employee} from './employeeModel';
+using {cdx.usr.Student} from './studentModel';
+using {cdx.common.Status} from '../common';
 
 entity RoleAssignment : cuid, managed {
     role     : Association to Role @mandatory; // mandatory

@@ -1,2 +1,2 @@
-using siemens.cdx.org.service.Organization from './organizationService';
+using cdx.org.service.Organization from './organizationService';
 

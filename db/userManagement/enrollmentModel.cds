@@ -1,17 +1,17 @@
-namespace siemens.cdx.usr;
+namespace cdx.usr;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.usr.Student} from './studentModel';
+using {cdx.usr.Student} from './studentModel';
 using {
-    siemens.cdx.org.AcademicYear,
-    siemens.cdx.org.Grade,
-    siemens.cdx.org.Section
+    cdx.org.AcademicYear,
+    cdx.org.Grade,
+    cdx.org.Section
 } from '../organizationSetup';
-using {siemens.cdx.common.Status} from '../common';
+using {cdx.common.Status} from '../common';
 
 @assert.unique.rollNumber: [
     academicYear,

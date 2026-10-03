@@ -1,6 +1,6 @@
-namespace siemens.cdx.org.service;
+namespace cdx.org.service;
 
-using siemens.cdx.org as OrganizationSetupModel from '../../../db/organizationSetup';
+using cdx.org as OrganizationSetupModel from '../../../db/organizationSetup';
 
 service OrganizationService {
     // annotate AcademicYear with  @odata.draft.enabled  @Common.SemanticKey: [];

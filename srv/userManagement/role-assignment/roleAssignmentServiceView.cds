@@ -1,1 +1,1 @@
-using siemens.cdx.usr.service.RoleAssignment from './roleAssignmentService';
+using cdx.usr.service.RoleAssignment from './roleAssignmentService';

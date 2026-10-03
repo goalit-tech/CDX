@@ -1,13 +1,13 @@
-namespace siemens.cdx.org;
+namespace cdx.org;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
-using {siemens.cdx.common.Address} from '../common';
-using {siemens.cdx.org.Organization} from './organizationModel';
-using {siemens.cdx.org.CampusCategory} from './codeListModel';
-using {siemens.cdx.common.Status} from '../common';
+using {cdx.common.Address} from '../common';
+using {cdx.org.Organization} from './organizationModel';
+using {cdx.org.CampusCategory} from './codeListModel';
+using {cdx.common.Status} from '../common';
 
 @assert.unique.campusCode: [
     organization,

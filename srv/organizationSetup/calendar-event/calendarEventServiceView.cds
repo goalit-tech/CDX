@@ -1,1 +1,1 @@
-using siemens.cdx.org.service.CalendarEvent from './calendarEventService';
+using cdx.org.service.CalendarEvent from './calendarEventService';

@@ -1,12 +1,12 @@
-namespace siemens.cdx.org;
+namespace cdx.org;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.org.AcademicYear} from './academicYearModel';
-using {siemens.cdx.org.CalendarEventType} from './codeListModel';
+using {cdx.org.AcademicYear} from './academicYearModel';
+using {cdx.org.CalendarEventType} from './codeListModel';
 
 entity CalendarEvent : cuid, managed {
     academicYear : Association to AcademicYear; // mandatory

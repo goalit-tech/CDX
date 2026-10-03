@@ -1,2 +1,2 @@
-using siemens.cdx.org.service.AcademicYear from './academicYearService';
+using cdx.org.service.AcademicYear from './academicYearService';
 

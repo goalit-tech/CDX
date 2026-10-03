@@ -1,1 +1,1 @@
-using siemens.cdx.org.service.Section from './sectionService';
+using cdx.org.service.Section from './sectionService';

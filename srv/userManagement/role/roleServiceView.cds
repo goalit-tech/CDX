@@ -1,1 +1,1 @@
-using siemens.cdx.usr.service.Role from './roleService';
+using cdx.usr.service.Role from './roleService';

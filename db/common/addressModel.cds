@@ -1,12 +1,12 @@
-namespace siemens.cdx.common;
+namespace cdx.common;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.common.AddressType} from './codeListModel';
-using {siemens.cdx.common.EntityName} from './codeListModel';
+using {cdx.common.AddressType} from './codeListModel';
+using {cdx.common.EntityName} from './codeListModel';
 
 //////////////////////////////////////////////////////
 // Address Entity

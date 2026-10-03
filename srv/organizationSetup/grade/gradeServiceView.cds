@@ -1,1 +1,1 @@
-using siemens.cdx.org.service.Grade from './gradeService';
+using cdx.org.service.Grade from './gradeService';

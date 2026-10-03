@@ -1,11 +1,11 @@
-namespace siemens.cdx.usr;
+namespace cdx.usr;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
 
-using {siemens.cdx.common.Status} from '../common';
+using {cdx.common.Status} from '../common';
 
 entity Role : cuid, managed {
     roleName    : String(50) @mandatory; // mandatory (Admin, Teacher, Student, Accountant, Principal, Librarian, HR)

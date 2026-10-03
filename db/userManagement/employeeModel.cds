@@ -1,13 +1,13 @@
-namespace siemens.cdx.usr;
+namespace cdx.usr;
 
 using {
     cuid,
     managed
 } from '@sap/cds/common';
-using {siemens.cdx.org.Campus} from '../organizationSetup';
-using {siemens.cdx.common.Status} from '../common';
-using {siemens.cdx.common.Address} from '../common';
-using {siemens.cdx.usr.EmployeeRole} from './codeListModel';
+using {cdx.org.Campus} from '../organizationSetup';
+using {cdx.common.Status} from '../common';
+using {cdx.common.Address} from '../common';
+using {cdx.usr.EmployeeRole} from './codeListModel';
 
 
 @assert.unique.employeeID: [

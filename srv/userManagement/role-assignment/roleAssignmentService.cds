@@ -1,6 +1,6 @@
-namespace siemens.cdx.usr.service;
+namespace cdx.usr.service;
 
-using siemens.cdx.usr as UserManagementModel from '../../../db/userManagement';
+using cdx.usr as UserManagementModel from '../../../db/userManagement';
 
 service RoleAssignmentService {
     annotate UserManagementModel.RoleAssignment with @odata.draft.enabled;
