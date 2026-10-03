@@ -21,6 +21,7 @@ sap.ui.define(
       enrollment: "Enrollment",
       role: "Roles",
       "role-assignment": "RoleAssignments",
+      accounts: "UserAccounts",
     };
 
     return PageController.extend("cdx.ui.dashbaord.view.Landing", {
@@ -46,6 +47,10 @@ sap.ui.define(
           }),
           "app",
         );
+        var bIsAdmin = Array.isArray(oComponentData.user && oComponentData.user.roles) &&
+          oComponentData.user.roles.includes("admin");
+        this.byId("navItemAccounts").setVisible(bIsAdmin);
+        this.byId("tileAccounts").setVisible(bIsAdmin);
 
         // selection lives on the NavigationList, not the individual item
         this.byId("mainNavList").setSelectedKey("home");

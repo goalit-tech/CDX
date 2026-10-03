@@ -143,6 +143,11 @@
           "name": "RoleAssignments",
           "pattern": "role-assignments:?query:",
           "target": "RoleAssignments"
+        },
+        {
+          "name": "UserAccounts",
+          "pattern": "user-accounts:?query:",
+          "target": "UserAccounts"
         }
       ],
       "targets": {
@@ -298,6 +303,19 @@
               "navigation": {},
               "contextPath": "/Organization",
               "viewName": "cdx.ui.dashbaord.view.Module"
+            }
+          }
+        },
+        "UserAccounts": {
+          "type": "Component",
+          "id": "UserAccounts",
+          "contextPattern": "",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Organization",
+              "viewName": "cdx.ui.dashbaord.view.UserAccounts"
             }
           }
         }

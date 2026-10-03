@@ -45,6 +45,7 @@
                             <tnt:NavigationListItem id="navItemEnrollment" text="{i18n>navEnrollment}" key="enrollment" icon="sap-icon://add-employee"/>
                             <tnt:NavigationListItem id="navItemRole" text="{i18n>navRole}" key="role" icon="sap-icon://key-user-settings"/>
                             <tnt:NavigationListItem id="navItemRoleAssignment" text="{i18n>navRoleAssignment}" key="role-assignment" icon="sap-icon://user-settings"/>
+                            <tnt:NavigationListItem id="navItemAccounts" text="{i18n>navAccounts}" key="accounts" icon="sap-icon://add-employee"/>
                         </tnt:items>
                     </tnt:NavigationListItem>
                 </tnt:NavigationList>
@@ -118,6 +119,14 @@
                             </customData>
                             <tileContent>
                                 <TileContent id="tileContentStudent"><content><core:Icon id="tileIconStudent" src="sap-icon://student" size="2rem"/></content></TileContent>
+                            </tileContent>
+                        </GenericTile>
+                        <GenericTile id="tileAccounts" header="{i18n>navAccounts}" subheader="{i18n>tileManageAccountsSubtitle}" press="onTilePress" class="sapUiSmallMargin">
+                            <customData>
+                                <core:CustomData key="target" value="accounts"/>
+                            </customData>
+                            <tileContent>
+                                <TileContent id="tileContentAccounts"><content><core:Icon id="tileIconAccounts" src="sap-icon://add-employee" size="2rem"/></content></TileContent>
                             </tileContent>
                         </GenericTile>
                     </FlexBox>

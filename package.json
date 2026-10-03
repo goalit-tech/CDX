@@ -11,6 +11,8 @@
   },
   "scripts": {
     "start": "cds-serve",
+    "db:init": "npx cds deploy db --to sqlite:db.sqlite",
+    "bootstrap-admin": "node scripts/bootstrap-admin.js",
     "watch-dashbaord": "cds watch --open login.html --livereload false"
   },
   "private": true,
@@ -22,6 +24,14 @@
   ],
   "cds": {
     "requires": {
+      "db": {
+        "[development]": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": "db.sqlite"
+          }
+        }
+      },
       "auth": {
         "impl": "./srv/authentication/custom-auth.js"
       }

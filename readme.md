@@ -55,12 +55,30 @@ generate a password hash with:
 node -e "require('./srv/authentication/security').hashPassword(process.argv[1]).then(console.log)" "YourStrongPassword"
 ```
 
-Set `JWT_SECRET` to a random value of at least 32 bytes before starting the app:
+For local development, account data is stored in the ignored `db.sqlite` file.
+Set `JWT_SECRET` to a random value of at least 32 bytes before starting the app,
+and keep the same value when restarting it so existing tokens remain valid:
 
 ```powershell
+npm run db:init
 $env:JWT_SECRET = node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 npx cds watch
 ```
+
+With the server running, open a second terminal in the project directory and
+create the first administrator interactively. The script hides password input
+and calls the unauthenticated bootstrap action, which only succeeds while the
+account table is empty:
+
+```powershell
+npm run bootstrap-admin
+```
+
+Sign in at `/login.html` with that account. Administrators can then open
+**User Management > Accounts** to create admin or faculty accounts. The account
+creation action requires an admin JWT; only the one-time bootstrap action is
+unauthenticated. Keep the app local until bootstrap is complete and do not
+expose this local-password flow as a production identity provider.
 
 The login action returns a short-lived HS256 bearer token. Every business OData
 service requires an authenticated user, and the CAP custom authentication

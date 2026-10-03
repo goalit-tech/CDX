@@ -1,5 +1,6 @@
 const cds = require('@sap/cds');
 const { SELECT } = cds.ql;
+const { createAccount, getUserInfo } = require('./accounts');
 const { issueToken, verifyPassword } = require('./security');
 
 class AuthenticationService extends cds.ApplicationService {
@@ -23,13 +24,7 @@ class AuthenticationService extends cds.ApplicationService {
                 : null;
             const roles = roleGroup?.roleGroupName ? [roleGroup.roleGroupName] : [];
             const expiresIn = 3600;
-            const user = {
-                id: account.userId,
-                firstName: account.firstName,
-                lastName: account.lastName,
-                fullName: account.fullName,
-                email: account.email
-            };
+            const user = getUserInfo(account, roles);
 
             return {
                 accessToken: issueToken({ sub: account.userId, roles }, expiresIn),
@@ -37,6 +32,15 @@ class AuthenticationService extends cds.ApplicationService {
                 expiresIn,
                 user
             };
+        });
+
+        this.on('bootstrapAdmin', async (req) => {
+            const tx = cds.db.tx(req);
+            const existingAccount = await tx.run(SELECT.one.from('cdx.auth.Role').columns('ID'));
+            if (existingAccount) {
+                return req.reject(409, 'Initial administrator has already been created.');
+            }
+            return createAccount(tx, req.data, 'admin', req.reject.bind(req));
         });
 
         return super.init();
