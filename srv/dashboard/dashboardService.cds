@@ -4,7 +4,7 @@ using {cdx.org as orgMModel} from '../../db/organizationSetup';
 using {cdx.usr as userModel} from '../../db/userManagement';
 
 @cds.autoexpose: false
-service DashboardService {
+service DashboardService @(requires: 'authenticated-user') {
     @odata.draft.enabled: false
     entity Organizations as projection on orgMModel.Organization;
 

@@ -2,7 +2,8 @@
   "name": "campusdesk",
   "version": "1.0.0",
   "dependencies": {
-    "@sap/cds": "^9"
+    "@sap/cds": "^9",
+    "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2.4",
@@ -22,21 +23,7 @@
   "cds": {
     "requires": {
       "auth": {
-        "kind": "mocked",
-        "users": {
-          "admin": {
-            "password": "Admin@123",
-            "roles": [
-              "admin"
-            ]
-          },
-          "faculty": {
-            "password": "Faculty@123",
-            "roles": [
-              "faculty"
-            ]
-          }
-        }
+        "impl": "./srv/authentication/custom-auth.js"
       }
     }
   }

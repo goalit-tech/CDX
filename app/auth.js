@@ -6,24 +6,24 @@
 
     window.CDXAuth = {
         signIn: async function (username, password) {
-            var bytes = new TextEncoder().encode(username + ":" + password);
-            var header = "Basic " + btoa(Array.from(bytes, function (byte) {
-                return String.fromCharCode(byte);
-            }).join(""));
-            var response = await fetch("/odata/v4/auth/whoami", {
-                headers: { Authorization: header, Accept: "application/json" }
+            var response = await fetch("/odata/v4/authentication/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ username: username, password: password })
             });
             if (!response.ok) {
                 throw new Error("Invalid username or password. Please try again.");
             }
-            var user = await response.json();
-            sessionStorage.setItem(credentialsKey, header);
-            sessionStorage.setItem(userKey, JSON.stringify(user));
-            return user;
+            var result = await response.json();
+            sessionStorage.setItem(credentialsKey, result.accessToken);
+            sessionStorage.setItem(userKey, JSON.stringify(result.user));
+            sessionStorage.setItem("cdx.auth.expiresAt", String(Date.now() + result.expiresIn * 1000));
+            return result.user;
         },
         signOut: function () {
             sessionStorage.removeItem(credentialsKey);
             sessionStorage.removeItem(userKey);
+            sessionStorage.removeItem("cdx.auth.expiresAt");
         },
         getUser: function () {
             try {
@@ -33,10 +33,12 @@
             }
         },
         getAuthHeader: function () {
-            return sessionStorage.getItem(credentialsKey);
+            var token = sessionStorage.getItem(credentialsKey);
+            return token ? "Bearer " + token : null;
         },
         isLoggedIn: function () {
-            return !!this.getAuthHeader() && !!this.getUser();
+            var expiresAt = Number(sessionStorage.getItem("cdx.auth.expiresAt"));
+            return !!this.getAuthHeader() && !!this.getUser() && expiresAt > Date.now();
         },
         getLaunchUrl: async function () {
             var project = new URLSearchParams(window.location.search).get("project");

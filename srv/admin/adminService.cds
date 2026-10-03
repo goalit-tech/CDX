@@ -1,7 +1,7 @@
 using {cdx.org as orgModel} from '../../db/organizationSetup';
 using {cdx.usr as usrModel} from '../../db/userManagement';
 
-service AdminService {
+service AdminService @(requires: 'authenticated-user') {
     entity Organization   as projection on orgModel.Organization;
     entity Campus         as projection on orgModel.Campus;
     entity AcademicYear   as projection on orgModel.AcademicYear;

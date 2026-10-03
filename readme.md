@@ -46,5 +46,27 @@ logic, without login/logout handlers or session guards. The dashboard's own
 entry page can still be used independently, but the authenticated workflow uses
 the shared host.
 
-This development flow uses CAP mocked Basic authentication and browser session
-storage. Use an identity-provider-backed server session for production.
+Login posts credentials to `AuthenticationService.login`. Accounts are read from
+`cdx.auth.Role`; store passwords as `scrypt$<salt>$<hash>` values generated with
+the `hashPassword` helper in `srv/authentication/security.js`. For local setup,
+generate a password hash with:
+
+```powershell
+node -e "require('./srv/authentication/security').hashPassword(process.argv[1]).then(console.log)" "YourStrongPassword"
+```
+
+Set `JWT_SECRET` to a random value of at least 32 bytes before starting the app:
+
+```powershell
+$env:JWT_SECRET = node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+npx cds watch
+```
+
+The login action returns a short-lived HS256 bearer token. Every business OData
+service requires an authenticated user, and the CAP custom authentication
+implementation validates the bearer token and populates `cds.context.user`.
+
+This custom strategy follows CAP's documented authentication middleware
+contract. For production use with SAP identity providers, configure CAP's `jwt`,
+`xsuaa`, or `ias` strategy and issue tokens through that trusted provider rather
+than using local password-based token issuance.
