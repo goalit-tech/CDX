@@ -8,22 +8,22 @@
     <Page id="userAccountsPage" title="{i18n>navAccounts}" showNavButton="true" navButtonPress="onNavBack">
         <content>
             <VBox id="accountForm" width="100%" class="sapUiContentPadding">
-                <MessageStrip text="{i18n>accountPasswordHint}" type="Information" showIcon="true" class="sapUiSmallMarginBottom"/>
-                <Label text="{i18n>accountUsername}" labelFor="accountUsernameInput" required="true"/>
+                <MessageStrip id="_IDGenMessageStrip" text="{i18n>accountPasswordHint}" type="Information" showIcon="true" class="sapUiSmallMarginBottom"/>
+                <Label id="_IDGenLabel" text="{i18n>accountUsername}" labelFor="accountUsernameInput" required="true"/>
                 <Input id="accountUsernameInput" maxLength="10" required="true"/>
-                <Label text="{i18n>accountFirstName}" labelFor="accountFirstNameInput" required="true" class="sapUiSmallMarginTop"/>
+                <Label id="_IDGenLabel1" text="{i18n>accountFirstName}" labelFor="accountFirstNameInput" required="true" class="sapUiSmallMarginTop"/>
                 <Input id="accountFirstNameInput" maxLength="40" required="true"/>
-                <Label text="{i18n>accountLastName}" labelFor="accountLastNameInput" required="true" class="sapUiSmallMarginTop"/>
+                <Label id="_IDGenLabel2" text="{i18n>accountLastName}" labelFor="accountLastNameInput" required="true" class="sapUiSmallMarginTop"/>
                 <Input id="accountLastNameInput" maxLength="40" required="true"/>
-                <Label text="{i18n>accountEmail}" labelFor="accountEmailInput" required="true" class="sapUiSmallMarginTop"/>
+                <Label id="_IDGenLabel3" text="{i18n>accountEmail}" labelFor="accountEmailInput" required="true" class="sapUiSmallMarginTop"/>
                 <Input id="accountEmailInput" type="Email" maxLength="255" required="true"/>
-                <Label text="{i18n>accountPassword}" labelFor="accountPasswordInput" required="true" class="sapUiSmallMarginTop"/>
+                <Label id="_IDGenLabel4" text="{i18n>accountPassword}" labelFor="accountPasswordInput" required="true" class="sapUiSmallMarginTop"/>
                 <Input id="accountPasswordInput" type="Password" required="true"/>
-                <Label text="{i18n>accountRole}" labelFor="accountRoleSelect" required="true" class="sapUiSmallMarginTop"/>
+                <Label id="_IDGenLabel5" text="{i18n>accountRole}" labelFor="accountRoleSelect" required="true" class="sapUiSmallMarginTop"/>
                 <Select id="accountRoleSelect" selectedKey="faculty" width="100%">
                     <items>
-                        <core:Item key="faculty" text="{i18n>accountFacultyRole}" xmlns:core="sap.ui.core"/>
-                        <core:Item key="admin" text="{i18n>accountAdminRole}" xmlns:core="sap.ui.core"/>
+                        <core:Item id="_IDGenItem1" key="faculty" text="{i18n>accountFacultyRole}" xmlns:core="sap.ui.core"/>
+                        <core:Item id="_IDGenItem2" key="admin" text="{i18n>accountAdminRole}" xmlns:core="sap.ui.core"/>
                     </items>
                 </Select>
                 <Button id="createAccountButton" text="{i18n>accountCreateButton}" type="Emphasized" icon="sap-icon://add-employee" press="onCreateAccount" class="sapUiMediumMarginTop"/>
