@@ -1,4 +1,4 @@
-# CampusDesk (CampusDrive) – School Management System
+# CDX (Campus Digital Experience) – School Management System
 
 **Platform:** SAP Cloud Application Programming Model (CAP)  
 **Schema Prefix:** `cd_`  

@@ -1,4 +1,4 @@
-namespace campusdesk;
+namespace cdx;
 
 using { cuid, managed } from '@sap/cds/common';
 

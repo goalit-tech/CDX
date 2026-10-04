@@ -1,6 +1,6 @@
-# Getting Started
+# CDX (Campus Digital Experience) - School Management System
 
-Welcome to your new CAP project.
+Welcome to the CDX CAP project.
 
 It contains these folders and files, following our recommended project layout:
 

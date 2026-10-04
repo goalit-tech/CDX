@@ -1,6 +1,6 @@
 # SAP CAPM School Management System – Evolutionary User Stories
 
-**Project Name:** CampusDesk (CampusDrive)  
+**Project Name:** CDX (Campus Digital Experience)  
 **Schema Prefix:** `cd_`  
 **Project Key:** `cdesk`
 
